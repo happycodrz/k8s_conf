@@ -6,7 +6,7 @@ defmodule K8s.Conf do
   alias __MODULE__
   alias K8s.Conf.{PKI, RequestOptions}
 
-  @providers [K8s.Conf.Auth.Certificate, K8s.Conf.Auth.Token]
+  @providers [K8s.Conf.Auth.Certificate, K8s.Conf.Auth.Token, K8s.Conf.Auth.Dummy]
 
   @typep auth_t :: nil | struct
 

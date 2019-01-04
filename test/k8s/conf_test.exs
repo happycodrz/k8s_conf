@@ -27,6 +27,8 @@ defmodule K8s.ConfTest do
     test "using an alternate cluster: cluster-with-cert-data" do
       config = Conf.from_file("test/support/kube-config.yaml", cluster: "cluster-with-cert-data")
       assert %Certificate{} = config.auth
+
+      # config.auth |> Map.values() |> IO.inspect
       assert config.url == "https://123.123.123.123"
       assert config.cluster_name == "cluster-with-cert-data"
       assert config.ca_cert
